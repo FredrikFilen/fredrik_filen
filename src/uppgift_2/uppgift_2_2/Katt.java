@@ -1,8 +1,7 @@
 package uppgift_2.uppgift_2_2;
 
-
 public class Katt {
-	
+
 	private String name = "";
 	private String race = "";
 
@@ -11,11 +10,11 @@ public class Katt {
 		this.race = race;
 	}
 
-	String GetName() {
+	String getName() {
 		return name;
 	}
 
-	String GetRace() {
+	String getRace() {
 		return race;
 	}
 }

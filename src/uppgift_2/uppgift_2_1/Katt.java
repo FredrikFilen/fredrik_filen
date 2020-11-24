@@ -9,11 +9,11 @@ public class Katt {
 		this.race = race;
 	}
 
-	String GetName() {
+	String getName() {
 		return name;
 	}
 
-	String GetRace() {
+	String getRace() {
 		return race;
 	}
 }

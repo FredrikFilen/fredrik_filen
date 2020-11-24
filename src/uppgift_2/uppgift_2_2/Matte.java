@@ -10,11 +10,11 @@ public class Matte {
 
 	}
 
-	String GetName() {
+	String getName() {
 		return name;
 	}
 
-	Katt GetKatt() {
+	Katt getKatt() {
 		return katt;
 	}
 }
