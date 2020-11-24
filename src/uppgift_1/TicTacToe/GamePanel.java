@@ -1,4 +1,4 @@
-package uppgift1.TicTacToe;
+package uppgift_1.TicTacToe;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
