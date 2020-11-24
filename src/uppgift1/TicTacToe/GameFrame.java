@@ -1,3 +1,4 @@
+package uppgift1.TicTacToe;
 import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
