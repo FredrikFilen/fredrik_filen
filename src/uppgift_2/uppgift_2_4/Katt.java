@@ -5,9 +5,13 @@ public class Katt {
 	private String race = "";
 	private Matte matte;
 
-	Katt() {
+	Katt(String name, String race) {
 		this.name = name;
 		this.race = race;
+	}
+
+	String getName() {
+		return name;
 	}
 
 	void setOwner(Matte matte) {
@@ -15,6 +19,6 @@ public class Katt {
 	}
 
 	void getOwner() {
-		System.out.println("min ägare är: " + matte);
+		System.out.println("min ägare är: " + matte.getName());
 	}
 }

@@ -7,7 +7,8 @@ public class Matte {
 		this.name = name;
 	}
 
-	void getName() {
-		System.out.println(name);
+	String getName() {
+		return name;
 	}
+
 }
