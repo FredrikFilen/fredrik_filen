@@ -3,13 +3,13 @@ package uppgift_2.uppgift_2_3;
 public class Main {
 
 	public static void main(String[] args) {
-		Husse husse = new Husse("erik");
+		Husse husse = new Husse("Erik");
 
-		husse.buyDog(new Hund("nisse", "dalmatin"));
-		husse.buyDog(new Hund("asdasd", "schäfer"));
-		husse.buyDog(new Hund("lol", "katthund"));
+		husse.buyDog(new Hund("Nisse", "dalmatin"));
+		husse.buyDog(new Hund("Brutus", "schäfer"));
+		husse.buyDog(new Hund("Derp", "katthund"));
 
-		husse.getName();
+		System.out.println(husse.getName());
 		husse.showDogs();
 	}
 

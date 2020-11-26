@@ -1,19 +1,9 @@
 package uppgift_2.uppgift_2_1;
 
-public class Hund {
-	private String name = "";
-	private String race = "";
-
+public class Hund extends Animal {
 	Hund(String name, String race) {
 		this.name = name;
 		this.race = race;
 	}
 
-	String getName() {
-		return name;
-	}
-
-	String getRace() {
-		return race;
-	}
 }

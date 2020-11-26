@@ -2,8 +2,8 @@ package uppgift_2.uppgift_2_3;
 
 import java.util.ArrayList;
 
-public class Husse {
-	private String name = "";
+public class Husse extends Owner {
+
 	private ArrayList<Hund> hundar = new ArrayList<Hund>();
 
 	Husse(String name) {
@@ -13,10 +13,6 @@ public class Husse {
 	void buyDog(Hund hund) {
 
 		hundar.add(hund);
-	}
-
-	void getName() {
-		System.out.println("jag heter " + name);
 	}
 
 	void showDogs() {

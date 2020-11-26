@@ -6,7 +6,8 @@ public class Main {
 		Katt katt = new Katt("Nisse", "Skogskatt");
 		Matte matte = new Matte("Sara", katt);
 
-		System.out.println(matte.getKatt());
+		System.out.println(matte.getName());
+		matte.getKatt().getName();
 
 	}
 

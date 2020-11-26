@@ -1,19 +1,10 @@
 package uppgift_2.uppgift_2_1;
 
-public class Katt {
-	private String name = "";
-	private String race = "";
+public class Katt extends Animal {
 
 	Katt(String name, String race) {
 		this.name = name;
 		this.race = race;
 	}
 
-	String getName() {
-		return name;
-	}
-
-	String getRace() {
-		return race;
-	}
 }
