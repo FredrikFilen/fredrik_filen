@@ -7,8 +7,4 @@ public class Katt extends Animal {
 		this.race = race;
 	}
 
-	Katt getKatt() {
-		return this;
-	}
-
 }

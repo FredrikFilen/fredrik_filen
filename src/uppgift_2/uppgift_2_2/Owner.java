@@ -2,8 +2,8 @@ package uppgift_2.uppgift_2_2;
 
 public class Owner {
 
-	String name = "";
-	Katt katt;
+	protected String name = "";
+	protected Katt katt;
 
 	String getName() {
 		return name;
