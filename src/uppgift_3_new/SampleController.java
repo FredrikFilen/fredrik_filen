@@ -1,13 +1,16 @@
 package uppgift_3_new;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -15,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Duration;
 
-public class SampleController {
+public class SampleController implements Initializable {
 	int milliseconds = 0;
 	int seconds = 0;
 	int minutes = 0;
@@ -29,16 +32,30 @@ public class SampleController {
 	private Button resetButton;
 
 	@FXML
+	private Button clearHistoryButton;
+
+	@FXML
 	private TextField timeDisplay;
 
 	@FXML
-	private TableView tableView;
+	private TableView<DateAndTime> tableView;
 
 	@FXML
-	private TableColumn<DateAndTime, String> dateColumn;
+	private TableColumn<DateAndTime, String> dateTime;
 
 	@FXML
 	private TableColumn<DateAndTime, String> timeColumn;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		dateTime.setCellValueFactory(new PropertyValueFactory<>("date"));
+		timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+
+		tableView.setItems(savedTime);
+
+	}
+
+	ObservableList<DateAndTime> savedTime = FXCollections.observableArrayList();
 
 	@FXML
 	void startTimer(ActionEvent event) {
@@ -52,6 +69,7 @@ public class SampleController {
 			startButton.setText("START");
 			startButton.setStyle("-fx-background-color: green");
 			timeLine.stop();
+			savedTime.add(new DateAndTime(text1));
 		}
 
 	}
@@ -66,6 +84,12 @@ public class SampleController {
 		timeDisplay.setText("00 : 00 : 000");
 		startButton.setText("START");
 		startButton.setStyle("-fx-background-color: green");
+
+	}
+
+	@FXML
+	void clearHistory(ActionEvent event) {
+		tableView.getItems().clear();
 	}
 
 	void newTimeline() {
@@ -86,28 +110,6 @@ public class SampleController {
 		}));
 		timeLine.setCycleCount(Animation.INDEFINITE);
 		timeLine.play();
-	}
-
-	public String printDateTime() {
-		LocalDateTime localDate = LocalDateTime.now();
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		String myDateTime = localDate.format(format);
-		return myDateTime;
-
-	}
-
-	public String printTime(String text1) {
-		String timeToSave = text1;
-		return timeToSave;
-
-	}
-
-	public void saveTimeAndDate() {
-		dateColumn.setCellValueFactory((new PropertyValueFactory<>("dateTime")));
-		timeColumn.setCellValueFactory((new PropertyValueFactory<>("time")));
-
-		dateColumn.setCellFactory(value);
-
 	}
 
 }

@@ -1,17 +1,28 @@
 package uppgift_3_new;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DateAndTime {
 
-	private String dateTime;
+	private String date;
 	private String time;
 
-	DateAndTime(String dateTime, String time) {
-		this.dateTime = dateTime;
+	DateAndTime(String time) {
 		this.time = time;
+		setDateTime();
 	}
 
-	public String getDateTime() {
-		return dateTime;
+	public void setDateTime() {
+		Date date = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		String formattedDate = sd.format(date);
+		this.date = formattedDate;
+
+	}
+
+	public String getDate() {
+		return date;
 	}
 
 	public String getTime() {
