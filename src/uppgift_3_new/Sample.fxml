@@ -32,9 +32,9 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="timeDisplay" editable="false" focusTraversable="false" layoutX="71.0" layoutY="68.0" prefHeight="135.0" prefWidth="290.0" promptText="00 : 00 : 000" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TextField fx:id="timeDisplay" editable="false" focusTraversable="false" layoutX="71.0" layoutY="68.0" prefHeight="135.0" prefWidth="290.0" promptText="00 : 00 : 000" style="-fx-background-color: BLACK; -fx-text-fill: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
-                              <Font name="Comic Sans MS" size="40.0" />
+                              <Font name="Impact" size="50.0" />
                            </font>
                         </TextField>
                      </children>
@@ -54,7 +54,7 @@
                                  <children>
                                     <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startTimer" prefHeight="132.0" prefWidth="145.0" style="-fx-background-color: green;" text="START" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="Comic Sans MS Bold" size="30.0" />
+                                          <Font name="Impact" size="41.0" />
                                        </font>
                                     </Button>
                                  </children>
@@ -63,7 +63,7 @@
                                  <children>
                                     <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" onAction="#resetTimer" prefHeight="132.0" prefWidth="145.0" text="RESET" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font name="Comic Sans MS Bold" size="30.0" />
+                                          <Font name="Impact" size="40.0" />
                                        </font>
                                     </Button>
                                  </children>
