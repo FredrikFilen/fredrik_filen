@@ -1,4 +1,4 @@
-package uppgift_3_new;
+package uppgift_3;
 
 import java.io.File;
 import java.net.URL;

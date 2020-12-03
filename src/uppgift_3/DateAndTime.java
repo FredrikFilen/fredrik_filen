@@ -1,4 +1,4 @@
-package uppgift_3_new;
+package uppgift_3;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
