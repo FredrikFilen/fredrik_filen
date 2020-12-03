@@ -125,7 +125,7 @@ public class SampleController implements Initializable {
 	@FXML
 	void mysteryMode(ActionEvent event) {
 		Stage mystery = new Stage();
-		final File file = new File("cats.mp4");
+		final File file = new File("mystery.mp4");
 		final String MEDIA_URL = file.toURI().toString();
 
 		Media media = new Media(MEDIA_URL);
