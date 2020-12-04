@@ -20,6 +20,11 @@ public class Main extends Application {
 		}
 	}
 
+	// code to run on exit
+	public void stop() {
+
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}
