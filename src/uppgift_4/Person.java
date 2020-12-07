@@ -5,12 +5,24 @@ import java.io.Serializable;
 
 //bör skaffa ett serialVersionUID, kolla upp hur
 public class Person implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String age;
 
-	Person() {
+	public Person() {
+		// this.firstName = "";
+		// this.lastName = "";
+		// this.age = "";
+	}
 
+	public Person(String firstName, String lastName, String age) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
 	}
 
 	public String getFirstName() {

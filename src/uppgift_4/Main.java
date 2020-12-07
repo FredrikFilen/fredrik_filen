@@ -7,6 +7,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	// running before start
+
+	// main stuff
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -20,9 +23,9 @@ public class Main extends Application {
 		}
 	}
 
-	// code to run on exit
+	// runs on exit
 	public void stop() {
-
+		// SampleController.writeToXML();
 	}
 
 	public static void main(String[] args) {
