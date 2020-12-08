@@ -55,6 +55,9 @@ public class SampleController implements Initializable {
 	private Button saveButton;
 
 	@FXML
+	private Button saveChanges;
+
+	@FXML
 	private TableView<Person> tableView;
 
 	@FXML
@@ -107,6 +110,14 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressUpdateButton(ActionEvent event) {
+		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
+		firstNameTextField.setText(personSelected.getFirstName());
+		lastNameTextField.setText(personSelected.getLastName());
+		ageTextField.setText(personSelected.getAge());
+	}
+
+	@FXML
+	void pressSaveChangesButton(ActionEvent event) {
 
 	}
 
