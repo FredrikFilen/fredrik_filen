@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	// running before start
+	public void init() {
+
+	}
 
 	// main stuff
 	@Override

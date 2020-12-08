@@ -72,6 +72,8 @@ public class SampleController implements Initializable {
 		lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 		ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
 
+		readFromXML();
+
 		// tableView.setItems(personInfo);
 
 	}
@@ -109,7 +111,7 @@ public class SampleController implements Initializable {
 		writeToXML(personList);
 	}
 
-	public static void writeToXML(List list) {
+	public static void writeToXML(List<Person> personList) {
 		XMLEncoder encoder = null;
 		try {
 			encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("person.xml")));
@@ -117,18 +119,37 @@ public class SampleController implements Initializable {
 			System.out.println("Error: while creating or openeing the file person.xml");
 		}
 
-		encoder.writeObject(list);
+		encoder.writeObject(personList);
 		System.out.println("Write done(hopefully)");
+
 		encoder.close();
 	}
 
-	public static void readFromXML() {
+	public void readFromXML() {
 		XMLDecoder decoder = null;
 		try {
 			decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("person.xml")));
+			System.out.println("File stream opened and XMLDecoder created");
+
+			List<Person> personList = (List<Person>) decoder.readObject();
+
+			for (int i = 0; i < personList.size(); i++) {
+				tableView.getItems().add((Person) personList.get(i));
+			}
+
+			System.out.println("Read successful from person.xml (I think)");
+
 		} catch (FileNotFoundException e) {
+			System.out.println("ERROR: File person.xml not found");
+
+		} finally {
+			if (decoder != null) {
+				decoder.close();
+				System.out.println("decoder closed");
+			}
 
 		}
+
 	}
 
 }
