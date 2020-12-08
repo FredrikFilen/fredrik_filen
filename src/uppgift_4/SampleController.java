@@ -98,7 +98,11 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressDeleteButton(ActionEvent event) {
+		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItems().get(0);
+		tableView.getItems().remove(personSelected);
 
+		personList.remove(personSelected);
+		writeToXML(personList);
 	}
 
 	@FXML
