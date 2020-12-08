@@ -14,5 +14,18 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string></string>
+    </void>
+    <void property="firstName">
+     <string>fredrik</string>
+    </void>
+    <void property="lastName">
+     <string></string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>
