@@ -2,8 +2,6 @@ package uppgift_4;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -143,8 +141,7 @@ public class SampleController implements Initializable {
 	public static void writeToXML(List<Person> personList) {
 		XMLEncoder encoder = null;
 		try {
-			encoder = new XMLEncoder(
-					new BufferedOutputStream(new FileOutputStream((new File(".src/uppgift_4/Assets/person.xml")))));
+			encoder = new XMLEncoder(new FileOutputStream((new File("./src/uppgift_4/Assets/person.xml"))));
 		} catch (FileNotFoundException fileNotFound) {
 			System.out.println("Error: while creating or openeing the file person.xml");
 		}
@@ -158,8 +155,7 @@ public class SampleController implements Initializable {
 	public void readFromXML() {
 		XMLDecoder decoder = null;
 		try {
-			decoder = new XMLDecoder(
-					new BufferedInputStream(new FileInputStream((new File(".src/uppgift_4/Assets/person.xml")))));
+			decoder = new XMLDecoder(new FileInputStream((new File("./src/uppgift_4/Assets/person.xml"))));
 			System.out.println("File stream opened and XMLDecoder created");
 
 			personList = (List<Person>) decoder.readObject();
