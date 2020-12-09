@@ -4,7 +4,33 @@
   <void method="add">
    <object class="uppgift_4.Person">
     <void property="age">
-     <string></string>
+     <string>25</string>
+    </void>
+    <void property="firstName">
+     <string>Rebecca</string>
+    </void>
+    <void property="lastName">
+     <string>hej</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string>25</string>
+    </void>
+    <void property="firstName">
+     <string>abebe</string>
+    </void>
+    <void property="lastName">
+     <string>hej</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string>1</string>
     </void>
     <void property="firstName">
      <string>fredrik</string>
@@ -17,13 +43,13 @@
   <void method="add">
    <object class="uppgift_4.Person">
     <void property="age">
-     <string></string>
+     <string>24</string>
     </void>
     <void property="firstName">
-     <string>fredrik</string>
+     <string>fuckslut</string>
     </void>
     <void property="lastName">
-     <string></string>
+     <string>24</string>
     </void>
    </object>
   </void>

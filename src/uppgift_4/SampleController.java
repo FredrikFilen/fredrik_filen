@@ -55,6 +55,9 @@ public class SampleController implements Initializable {
 	private Button saveButton;
 
 	@FXML
+	private Button saveChanges;
+
+	@FXML
 	private TableView<Person> tableView;
 
 	@FXML
@@ -89,8 +92,8 @@ public class SampleController implements Initializable {
 		person.setFirstName(firstNameTextField.getText());
 		person.setLastName(lastNameTextField.getText());
 		person.setAge(ageTextField.getText());
-		tableView.getItems().add(person);
 
+		tableView.getItems().add(person);
 		listForTable.add(person);
 		personList.add(person);
 
@@ -99,15 +102,29 @@ public class SampleController implements Initializable {
 	@FXML
 	void pressDeleteButton(ActionEvent event) {
 		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItems().get(0);
-		tableView.getItems().remove(personSelected);
 
+		tableView.getItems().remove(personSelected);
 		personList.remove(personSelected);
+
 		writeToXML(personList);
 	}
 
 	@FXML
 	void pressUpdateButton(ActionEvent event) {
+		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
 
+		firstNameTextField.setText(personSelected.getFirstName());
+		lastNameTextField.setText(personSelected.getLastName());
+		ageTextField.setText(personSelected.getAge());
+	}
+
+	@FXML
+	void pressSaveChangesButton(ActionEvent event) {
+		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
+		personSelected.setFirstName(firstNameTextField.getText());
+		personSelected.setLastName(lastNameTextField.getText());
+		personSelected.setAge(ageTextField.getText());
+		tableView.refresh();
 	}
 
 	@FXML
@@ -135,7 +152,7 @@ public class SampleController implements Initializable {
 			decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("person.xml")));
 			System.out.println("File stream opened and XMLDecoder created");
 
-			List<Person> personList = (List<Person>) decoder.readObject();
+			personList = (List<Person>) decoder.readObject();
 
 			for (int i = 0; i < personList.size(); i++) {
 				tableView.getItems().add((Person) personList.get(i));
@@ -146,6 +163,7 @@ public class SampleController implements Initializable {
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: File person.xml not found");
 
+			// se om det här går att flytta in i try
 		} finally {
 			if (decoder != null) {
 				decoder.close();
