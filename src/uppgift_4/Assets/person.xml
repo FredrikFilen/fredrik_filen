@@ -17,26 +17,26 @@
   <void method="add">
    <object class="uppgift_4.Person">
     <void property="age">
-     <string>25</string>
+     <string>1</string>
     </void>
     <void property="firstName">
-     <string>abebe</string>
+     <string>adasdadasda</string>
     </void>
     <void property="lastName">
-     <string>hej</string>
+     <string></string>
     </void>
    </object>
   </void>
   <void method="add">
    <object class="uppgift_4.Person">
     <void property="age">
-     <string>1</string>
+     <string>asd</string>
     </void>
     <void property="firstName">
-     <string>fredrik</string>
+     <string>Dennis</string>
     </void>
     <void property="lastName">
-     <string></string>
+     <string>asd</string>
     </void>
    </object>
   </void>
