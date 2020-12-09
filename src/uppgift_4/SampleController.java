@@ -87,7 +87,7 @@ public class SampleController implements Initializable {
 	@FXML
 	void pressAddButton(ActionEvent event) {
 		// personInfo.add(new Person(firstNameTextField.getText(),
-		// lastNameTextField.getText(), ageTextField.getText()));
+		// lastNameTextField,getText(), ageTextField.getText()));
 		person = new Person();
 		person.setFirstName(firstNameTextField.getText());
 		person.setLastName(lastNameTextField.getText());
@@ -111,6 +111,7 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressUpdateButton(ActionEvent event) {
+		saveChanges.setDisable(false);
 		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
 
 		firstNameTextField.setText(personSelected.getFirstName());
@@ -124,6 +125,7 @@ public class SampleController implements Initializable {
 		personSelected.setFirstName(firstNameTextField.getText());
 		personSelected.setLastName(lastNameTextField.getText());
 		personSelected.setAge(ageTextField.getText());
+
 		tableView.refresh();
 	}
 

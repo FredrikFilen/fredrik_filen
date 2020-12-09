@@ -7,7 +7,7 @@
      <string>25</string>
     </void>
     <void property="firstName">
-     <string>Rebecca</string>
+     <string>sfsdf</string>
     </void>
     <void property="lastName">
      <string>hej</string>
@@ -37,19 +37,6 @@
     </void>
     <void property="lastName">
      <string></string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="uppgift_4.Person">
-    <void property="age">
-     <string>24</string>
-    </void>
-    <void property="firstName">
-     <string>fuckslut</string>
-    </void>
-    <void property="lastName">
-     <string>24</string>
     </void>
    </object>
   </void>

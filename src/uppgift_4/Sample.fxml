@@ -73,7 +73,7 @@
                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#pressAddButton" text="Add" />
                         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#pressDeleteButton" text="Delete" />
                         <Button fx:id="updateButton" mnemonicParsing="false" onAction="#pressUpdateButton" text="Update" />
-                        <Button fx:id="saveChanges" mnemonicParsing="false" onAction="#pressSaveChangesButton" text="save changes" />
+                        <Button fx:id="saveChanges" disable="true" mnemonicParsing="false" onAction="#pressSaveChangesButton" text="save changes" />
                         <Button fx:id="saveButton" mnemonicParsing="false" onAction="#pressSaveButton" text="saveToFile" />
                      </children>
                      <padding>
