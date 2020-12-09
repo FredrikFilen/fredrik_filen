@@ -120,7 +120,9 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressSaveChangesButton(ActionEvent event) {
-
+		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
+		personSelected.setFirstName(firstNameTextField.getText());
+		tableView.refresh();
 	}
 
 	@FXML
