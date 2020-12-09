@@ -78,9 +78,6 @@ public class SampleController implements Initializable {
 		ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
 
 		readFromXML();
-
-		// tableView.setItems(personInfo);
-
 	}
 
 	public static ObservableList<Person> listForTable = FXCollections.observableArrayList();
@@ -88,8 +85,6 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressAddButton(ActionEvent event) {
-		// personInfo.add(new Person(firstNameTextField.getText(),
-		// lastNameTextField,getText(), ageTextField.getText()));
 		person = new Person();
 		person.setFirstName(firstNameTextField.getText());
 		person.setLastName(lastNameTextField.getText());
@@ -169,7 +164,6 @@ public class SampleController implements Initializable {
 		} catch (FileNotFoundException e) {
 			System.out.println("ERROR: File person.xml not found");
 
-			// se om det här går att flytta in i try
 		} finally {
 			if (decoder != null) {
 				decoder.close();
