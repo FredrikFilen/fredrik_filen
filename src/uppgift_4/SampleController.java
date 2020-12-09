@@ -2,8 +2,7 @@ package uppgift_4;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -38,6 +37,9 @@ public class SampleController implements Initializable {
 
 	@FXML
 	private Label firstNameLabel;
+
+	@FXML
+	private Label lastNameLabel;
 
 	@FXML
 	private Label ageLabel;
@@ -82,7 +84,7 @@ public class SampleController implements Initializable {
 	}
 
 	public static ObservableList<Person> listForTable = FXCollections.observableArrayList();
-	List<Person> personList = new ArrayList<>();
+	static List<Person> personList = new ArrayList<>();
 
 	@FXML
 	void pressAddButton(ActionEvent event) {
@@ -112,6 +114,7 @@ public class SampleController implements Initializable {
 	@FXML
 	void pressUpdateButton(ActionEvent event) {
 		saveChanges.setDisable(false);
+
 		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
 
 		firstNameTextField.setText(personSelected.getFirstName());
@@ -121,6 +124,7 @@ public class SampleController implements Initializable {
 
 	@FXML
 	void pressSaveChangesButton(ActionEvent event) {
+
 		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
 		personSelected.setFirstName(firstNameTextField.getText());
 		personSelected.setLastName(lastNameTextField.getText());
@@ -137,7 +141,7 @@ public class SampleController implements Initializable {
 	public static void writeToXML(List<Person> personList) {
 		XMLEncoder encoder = null;
 		try {
-			encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("person.xml")));
+			encoder = new XMLEncoder(new FileOutputStream((new File("./src/uppgift_4/Assets/person.xml"))));
 		} catch (FileNotFoundException fileNotFound) {
 			System.out.println("Error: while creating or openeing the file person.xml");
 		}
@@ -151,13 +155,13 @@ public class SampleController implements Initializable {
 	public void readFromXML() {
 		XMLDecoder decoder = null;
 		try {
-			decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("person.xml")));
+			decoder = new XMLDecoder(new FileInputStream((new File("./src/uppgift_4/Assets/person.xml"))));
 			System.out.println("File stream opened and XMLDecoder created");
 
 			personList = (List<Person>) decoder.readObject();
 
 			for (int i = 0; i < personList.size(); i++) {
-				tableView.getItems().add((Person) personList.get(i));
+				tableView.getItems().add(personList.get(i));
 			}
 
 			System.out.println("Read successful from person.xml (I think)");

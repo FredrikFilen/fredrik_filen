@@ -4,13 +4,26 @@
   <void method="add">
    <object class="uppgift_4.Person">
     <void property="age">
-     <string>25</string>
+     <string>50</string>
     </void>
     <void property="firstName">
-     <string>sfsdf</string>
+     <string>Albert</string>
     </void>
     <void property="lastName">
-     <string>hej</string>
+     <string>Einstein</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string>33</string>
+    </void>
+    <void property="firstName">
+     <string>Nikola</string>
+    </void>
+    <void property="lastName">
+     <string>Tesla</string>
     </void>
    </object>
   </void>
@@ -20,23 +33,10 @@
      <string>25</string>
     </void>
     <void property="firstName">
-     <string>abebe</string>
+     <string>Marie</string>
     </void>
     <void property="lastName">
-     <string>hej</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="uppgift_4.Person">
-    <void property="age">
-     <string>1</string>
-    </void>
-    <void property="firstName">
-     <string>fredrik</string>
-    </void>
-    <void property="lastName">
-     <string></string>
+     <string>Curie</string>
     </void>
    </object>
   </void>
