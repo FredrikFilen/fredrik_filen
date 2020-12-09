@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="14.0.2" class="java.beans.XMLDecoder">
- <object class="java.util.ArrayList"/>
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string>25</string>
+    </void>
+    <void property="firstName">
+     <string>Fredrik</string>
+    </void>
+    <void property="lastName">
+     <string>hej</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_4.Person">
+    <void property="age">
+     <string>25</string>
+    </void>
+    <void property="firstName">
+     <string>Rebecca</string>
+    </void>
+    <void property="lastName">
+     <string>hej</string>
+    </void>
+   </object>
+  </void>
+ </object>
 </java>
