@@ -122,6 +122,8 @@ public class SampleController implements Initializable {
 	void pressSaveChangesButton(ActionEvent event) {
 		Person personSelected = (Person) tableView.getSelectionModel().getSelectedItem();
 		personSelected.setFirstName(firstNameTextField.getText());
+		personSelected.setLastName(lastNameTextField.getText());
+		personSelected.setAge(ageTextField.getText());
 		tableView.refresh();
 	}
 
