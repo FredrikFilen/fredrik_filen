@@ -1,13 +1,9 @@
 package uppgift_4;
 
 import java.io.Serializable;
-//objekt som skall serialiseras skall ha private variabler, konstruktor utan parametrar och getters och setters.
 
-//bör skaffa ett serialVersionUID, kolla upp hur
 public class Person implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;

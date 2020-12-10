@@ -26,7 +26,7 @@
           <RowConstraints maxHeight="430.0" minHeight="10.0" prefHeight="430.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <AnchorPane prefHeight="158.0" prefWidth="357.0">
+            <AnchorPane fx:id="labelsAnchor" prefHeight="158.0" prefWidth="357.0">
                <children>
                   <GridPane layoutX="352.0" layoutY="38.0" prefHeight="178.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
@@ -49,18 +49,18 @@
                         </VBox>
                         <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
-                              <Label fx:id="firstNameLabel" alignment="CENTER" text="First Name">
+                              <Label fx:id="firstNameLabel" alignment="CENTER" text="First Name" textFill="WHITE">
                                  <opaqueInsets>
                                     <Insets left="50.0" />
                                  </opaqueInsets>
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Label>
-                              <Label fx:id="lastNameLabel" alignment="CENTER" text="Last Name">
+                              <Label fx:id="lastNameLabel" alignment="CENTER" text="Last Name" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Label>
-                              <Label fx:id="ageLabel" alignment="CENTER" text="Age">
+                              <Label fx:id="ageLabel" alignment="CENTER" text="Age" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font></Label>
@@ -81,11 +81,11 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <HBox alignment="CENTER_RIGHT" layoutX="383.0" layoutY="-29.0" prefHeight="71.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <HBox alignment="CENTER_RIGHT" layoutX="383.0" layoutY="-29.0" prefHeight="71.0" prefWidth="800.0" spacing="20.0" style="-fx-opacity: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#pressAddButton" text="Add" />
                         <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#pressDeleteButton" text="Delete" />
-                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#pressUpdateButton" text="Update" />
+                        <Button fx:id="updateButton" disable="true" mnemonicParsing="false" onAction="#pressUpdateButton" text="Update" />
                         <Button fx:id="saveChanges" disable="true" mnemonicParsing="false" onAction="#pressSaveChangesButton" text="Save changes" />
                      </children>
                      <padding>

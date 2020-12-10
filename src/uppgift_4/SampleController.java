@@ -22,9 +22,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 public class SampleController implements Initializable {
 	Person person = new Person();
+
+	@FXML
+	private AnchorPane labelsAnchor;
 
 	@FXML
 	private TextField firstNameTextField;
@@ -77,6 +81,12 @@ public class SampleController implements Initializable {
 		lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 		ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
 
+		tableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+			if (newSelection != null) {
+				updateButton.setDisable(false);
+			}
+		});
+
 		readFromXML();
 	}
 
@@ -93,6 +103,10 @@ public class SampleController implements Initializable {
 		tableView.getItems().add(person);
 		listForTable.add(person);
 		personList.add(person);
+
+		firstNameTextField.clear();
+		lastNameTextField.clear();
+		ageTextField.clear();
 
 	}
 
@@ -124,6 +138,10 @@ public class SampleController implements Initializable {
 		personSelected.setFirstName(firstNameTextField.getText());
 		personSelected.setLastName(lastNameTextField.getText());
 		personSelected.setAge(ageTextField.getText());
+
+		firstNameTextField.clear();
+		lastNameTextField.clear();
+		ageTextField.clear();
 
 		tableView.refresh();
 	}
