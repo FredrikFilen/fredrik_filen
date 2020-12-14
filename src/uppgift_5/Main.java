@@ -18,7 +18,7 @@ public class Main extends Application {
 			// primaryStage.getIcons().add(new
 			// Image(getClass().getResourceAsStream("Assets/logo.png")));
 			primaryStage.setTitle("My bank");
-			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Main.fxml"));
+			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("login.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);

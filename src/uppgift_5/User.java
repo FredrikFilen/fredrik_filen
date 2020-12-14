@@ -16,11 +16,6 @@ public class User implements Serializable {
 
 	}
 
-	/*
-	 * User(String userName, String password) { this.userName = userName;
-	 * this.password = password; }
-	 */
-
 	public ArrayList<Account> getAccounts() {
 		return accounts;
 	}
