@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="14.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="uppgift_5.User"/>
+  </void>
+  <void method="add">
+   <object class="uppgift_5.User"/>
+  </void>
+  <void method="add">
+   <object class="uppgift_5.User">
+    <void property="password">
+     <string>test</string>
+    </void>
+    <void property="userName">
+     <string>admin</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
