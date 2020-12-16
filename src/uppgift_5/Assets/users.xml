@@ -2,12 +2,117 @@
 <java version="14.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
-   <object class="uppgift_5.User">
+   <object class="uppgift_5.User" id="User0">
+    <void property="accounts">
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="balance">
+        <double>542.0</double>
+       </void>
+       <void property="latestTransaction">
+        <string>2020/12/16 15:47:56</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="balance">
+        <double>42.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>test</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>79</int>
+       </void>
+       <void property="balance">
+        <double>1337.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/351 14:25:26</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>72</int>
+       </void>
+       <void property="balance">
+        <double>1037.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/351 14:54:10</string>
+       </void>
+       <void property="latestTransaction">
+        <string>2020/12/16 15:48:03</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>48</int>
+       </void>
+       <void property="balance">
+        <double>1337.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/16 15:40:29</string>
+       </void>
+      </object>
+     </void>
+    </void>
     <void property="password">
-     <string>test</string>
+     <string>1</string>
     </void>
     <void property="userName">
-     <string>admin</string>
+     <string>1</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_5.User" id="User1">
+    <void property="accounts">
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>93</int>
+       </void>
+       <void property="balance">
+        <double>1537.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/16 15:48:50</string>
+       </void>
+       <void property="latestTransaction">
+        <string>2020/12/16 15:51:17</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>96</int>
+       </void>
+       <void property="balance">
+        <double>1337.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/16 15:51:04</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="password">
+     <string>a</string>
+    </void>
+    <void property="userName">
+     <string>a</string>
     </void>
    </object>
   </void>

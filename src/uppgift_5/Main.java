@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 	public static ArrayList<User> userList = new ArrayList<User>(XML.decode());
+	// public static ArrayList<User> userList = new ArrayList<User>();
 
 	public void init() {
 
@@ -20,8 +22,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			// primaryStage.getIcons().add(new
-			// Image(getClass().getResourceAsStream("Assets/logo.png")));
+			primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Assets/logo.png")));
 			primaryStage.setTitle("My bank");
 			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("login.fxml"));
 			Scene login = new Scene(root);

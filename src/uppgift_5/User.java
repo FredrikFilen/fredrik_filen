@@ -7,13 +7,31 @@ public class User implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3362203693198693649L;
+
 	ArrayList<Account> accounts = new ArrayList<Account>();
 	private String userName;
 	private String password;
 
 	public User() {
 
+	}
+
+	public void createAccount() {
+		Account account = new Account();
+		account.setAccountNumber(MainController.randomNumber());
+		account.setBalance(1337);
+		account.setDateCreated(MainController.getDateAndTime());
+
+		this.accounts.add(account);
+
+	}
+
+	public void printAccounts() {
+		for (int i = 0; i < accounts.size(); i++) {
+			System.out.println(accounts.get(i).getAccountNumber());
+			System.out.println(accounts.get(i).getBalance());
+			System.out.println(accounts.get(i).getDateCreated());
+		}
 	}
 
 	public ArrayList<Account> getAccounts() {

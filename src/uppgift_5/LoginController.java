@@ -31,6 +31,9 @@ public class LoginController implements Initializable {
 	@FXML
 	private Label wrongPasswordLabel;
 
+	@FXML
+	private Button signupButton;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -40,31 +43,42 @@ public class LoginController implements Initializable {
 	void login(ActionEvent event) throws IOException {
 		for (int i = 0; i < Main.userList.size(); i++) {
 			User selectedUser = Main.userList.get(i);
+
 			if (selectedUser.getUserName().equals(userNameTextField.getText())
 					&& selectedUser.getPassword().equals(passwordTextfield.getText())) {
 				// login successful
 
-				Parent parent = FXMLLoader.load(getClass().getResource("Mainwindow.fxml"));
+				// passes the selectedUser to main screen
+				MainController.setUser(selectedUser);
+
+				Parent parent = FXMLLoader.load(getClass().getResource("Main.fxml"));
 				Scene main = new Scene(parent);
 
 				// get stage information
 				Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				window.setScene(main);
 				window.show();
+
 			} else {
 				// login unsuccesful
-				wrongPasswordLabel.setVisible(true);
+				try {
+					wrongPasswordLabel.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-		}
 
+		}
 	}
 
-	/*
-	 * public void createUser(String username, String password) { User user = new
-	 * User(); user.setUserName(username); user.setPassword(password);
-	 * Main.userList.add(user);
-	 * 
-	 * }
-	 */
+	@FXML
+	void createUser(ActionEvent event) {
+		String username = userNameTextField.getText();
+		String password = passwordTextfield.getText();
+		User newUser = new User();
+		newUser.setPassword(password);
+		newUser.setUserName(username);
+		Main.userList.add(newUser);
+	}
 
 }

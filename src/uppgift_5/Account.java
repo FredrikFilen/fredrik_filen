@@ -4,16 +4,17 @@ import java.io.Serializable;
 
 //implement serializable, abstract class
 public class Account implements Serializable {
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -979025929726598621L;
+
 	private int accountNumber;
 	private double balance;
 	private String dateCreated;
 	private String latestTransaction;
 
-	Account() {
+	public Account() {
 
 	}
 
@@ -21,8 +22,8 @@ public class Account implements Serializable {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setAccountNumber(int number) {
+		this.accountNumber = number;
 	}
 
 	public double getBalance() {
@@ -37,16 +38,16 @@ public class Account implements Serializable {
 		return dateCreated;
 	}
 
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDateCreated(String date) {
+		this.dateCreated = date;
 	}
 
 	public String getLatestTransaction() {
 		return latestTransaction;
 	}
 
-	public void setLatestTransaction(String latestTransaction) {
-		this.latestTransaction = latestTransaction;
+	public void setLatestTransaction(String date) {
+		this.latestTransaction = date;
 	}
 
 }

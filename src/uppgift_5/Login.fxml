@@ -4,12 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uppgift_5.LoginController">
    <children>
@@ -35,9 +36,22 @@
                   <TextField fx:id="userNameTextField" layoutX="125.0" layoutY="169.0" />
                   <PasswordField fx:id="passwordTextfield" layoutX="125.0" layoutY="224.0" />
                   <Button fx:id="loginButton" layoutX="222.0" layoutY="269.0" mnemonicParsing="false" onAction="#login" text="Login" />
+                  <Label fx:id="wrongPasswordLabel" layoutX="96.0" layoutY="314.0" text="Wrong username or password" textFill="RED" visible="false">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="signupButton" layoutX="124.0" layoutY="269.0" mnemonicParsing="false" onAction="#createUser" text="Sign up" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="250.0" fitWidth="236.0" layoutX="32.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Assets/dollar.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
          </children>
       </GridPane>
    </children>
