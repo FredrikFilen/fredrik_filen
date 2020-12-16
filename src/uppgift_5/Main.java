@@ -1,5 +1,7 @@
 package uppgift_5;
 
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	public static ArrayList<User> userList = new ArrayList<User>(XML.decode());
 
 	public void init() {
 
@@ -32,7 +35,7 @@ public class Main extends Application {
 	}
 
 	public void stop() {
-		XML.encode(LoginController.userList);
+		XML.encode(userList);
 	}
 
 	public static void main(String[] args) {

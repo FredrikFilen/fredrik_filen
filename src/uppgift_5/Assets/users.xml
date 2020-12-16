@@ -2,12 +2,6 @@
 <java version="14.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
-   <object class="uppgift_5.User"/>
-  </void>
-  <void method="add">
-   <object class="uppgift_5.User"/>
-  </void>
-  <void method="add">
    <object class="uppgift_5.User">
     <void property="password">
      <string>test</string>

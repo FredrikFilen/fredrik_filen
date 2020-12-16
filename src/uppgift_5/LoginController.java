@@ -2,7 +2,6 @@ package uppgift_5;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -32,8 +31,6 @@ public class LoginController implements Initializable {
 	@FXML
 	private Label wrongPasswordLabel;
 
-	public static ArrayList<User> userList = new ArrayList<User>(XML.decode());
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -41,31 +38,33 @@ public class LoginController implements Initializable {
 
 	@FXML
 	void login(ActionEvent event) throws IOException {
-		/*
-		 * for (int i = 0; i < userList.size(); i++) { User selectedUser =
-		 * userList.get(i); if
-		 * (selectedUser.getUserName().equals(userNameTextField.getText()) &&
-		 * selectedUser.getPassword().equals(passwordTextfield.getText())) {
-		 * 
-		 * 
-		 * } else { wrongPasswordLabel.setVisible(true); } }
-		 */
+		for (int i = 0; i < Main.userList.size(); i++) {
+			User selectedUser = Main.userList.get(i);
+			if (selectedUser.getUserName().equals(userNameTextField.getText())
+					&& selectedUser.getPassword().equals(passwordTextfield.getText())) {
+				// login successful
 
-		Parent parent = FXMLLoader.load(getClass().getResource("Mainwindow.fxml"));
-		Scene main = new Scene(parent);
+				Parent parent = FXMLLoader.load(getClass().getResource("Mainwindow.fxml"));
+				Scene main = new Scene(parent);
 
-		// get stage information
-		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		window.setScene(main);
-		window.show();
-	}
-
-	public void createUser(String username, String password) {
-		User user = new User();
-		user.setUserName(username);
-		user.setPassword(password);
-		userList.add(user);
+				// get stage information
+				Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				window.setScene(main);
+				window.show();
+			} else {
+				// login unsuccesful
+				wrongPasswordLabel.setVisible(true);
+			}
+		}
 
 	}
+
+	/*
+	 * public void createUser(String username, String password) { User user = new
+	 * User(); user.setUserName(username); user.setPassword(password);
+	 * Main.userList.add(user);
+	 * 
+	 * }
+	 */
 
 }
