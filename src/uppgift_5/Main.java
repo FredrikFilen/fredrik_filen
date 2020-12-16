@@ -12,6 +12,8 @@ public class Main extends Application {
 
 	}
 
+	public static Stage primaryStage;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -19,9 +21,9 @@ public class Main extends Application {
 			// Image(getClass().getResourceAsStream("Assets/logo.png")));
 			primaryStage.setTitle("My bank");
 			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("login.fxml"));
-			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
+			Scene login = new Scene(root);
+			login.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(login);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +32,7 @@ public class Main extends Application {
 	}
 
 	public void stop() {
-		XML.encode(MainController.userList);
+		XML.encode(LoginController.userList);
 	}
 
 	public static void main(String[] args) {
