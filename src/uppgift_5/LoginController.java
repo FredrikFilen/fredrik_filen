@@ -29,7 +29,7 @@ public class LoginController implements Initializable {
 	private Button loginButton;
 
 	@FXML
-	private Label wrongPasswordLabel;
+	private Label infoLabel;
 
 	@FXML
 	private Button signupButton;
@@ -53,6 +53,7 @@ public class LoginController implements Initializable {
 
 				Parent parent = FXMLLoader.load(getClass().getResource("Main.fxml"));
 				Scene main = new Scene(parent);
+				main.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 				// get stage information
 				Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,7 +63,8 @@ public class LoginController implements Initializable {
 			} else {
 				// login unsuccesful
 				try {
-					wrongPasswordLabel.setVisible(true);
+					infoLabel.setText("Wrong username or password");
+					infoLabel.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,6 +81,8 @@ public class LoginController implements Initializable {
 		newUser.setPassword(password);
 		newUser.setUserName(username);
 		Main.userList.add(newUser);
+		infoLabel.setText("Account created");
+		infoLabel.setVisible(true);
 	}
 
 }

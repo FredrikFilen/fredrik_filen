@@ -10,10 +10,13 @@
         <int>1</int>
        </void>
        <void property="balance">
-        <double>1337.0</double>
+        <double>600.0</double>
        </void>
        <void property="dateCreated">
         <string>2020/12/17 11:37:45</string>
+       </void>
+       <void property="latestTransaction">
+        <string>2020/12/17 13:26:25</string>
        </void>
       </object>
      </void>
@@ -23,6 +26,28 @@
     </void>
     <void property="userName">
      <string>a</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="uppgift_5.User" id="User1">
+    <void property="accounts">
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>2517</int>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/17 13:14:31</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="password">
+     <string>test</string>
+    </void>
+    <void property="userName">
+     <string>admin</string>
     </void>
    </object>
   </void>

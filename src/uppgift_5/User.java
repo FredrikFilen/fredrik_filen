@@ -19,19 +19,11 @@ public class User implements Serializable {
 	public void createAccount() {
 		Account account = new Account();
 		account.setAccountNumber(MainController.randomNumber());
-		account.setBalance(1337);
+		account.setBalance(0);
 		account.setDateCreated(MainController.getDateAndTime());
 
 		this.accounts.add(account);
 
-	}
-
-	public void printAccounts() {
-		for (int i = 0; i < accounts.size(); i++) {
-			System.out.println(accounts.get(i).getAccountNumber());
-			System.out.println(accounts.get(i).getBalance());
-			System.out.println(accounts.get(i).getDateCreated());
-		}
 	}
 
 	public ArrayList<Account> getAccounts() {
