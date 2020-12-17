@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="14.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="uppgift_5.User" id="User0">
+    <void property="accounts">
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>1</int>
+       </void>
+       <void property="balance">
+        <double>1337.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/17 11:37:45</string>
+       </void>
+      </object>
+     </void>
+    </void>
+    <void property="password">
+     <string>1</string>
+    </void>
+    <void property="userName">
+     <string>a</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
