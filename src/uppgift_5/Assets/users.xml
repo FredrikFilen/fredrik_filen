@@ -10,13 +10,13 @@
         <int>1</int>
        </void>
        <void property="balance">
-        <double>600.0</double>
+        <double>100.0</double>
        </void>
        <void property="dateCreated">
         <string>2020/12/17 11:37:45</string>
        </void>
        <void property="latestTransaction">
-        <string>2020/12/17 13:26:25</string>
+        <string>2020/12/17 13:31:17</string>
        </void>
       </object>
      </void>

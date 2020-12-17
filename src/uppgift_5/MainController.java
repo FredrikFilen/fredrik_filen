@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -87,7 +86,6 @@ public class MainController implements Initializable {
 				withdrawalButton.setDisable(false);
 				inputField.setDisable(false);
 				infoLabel.setText("Enter amount");
-				infoLabel.setAlignment(Pos.CENTER);
 			}
 		});
 
@@ -147,6 +145,8 @@ public class MainController implements Initializable {
 		selectedAccount.setBalance(balance);
 		selectedAccount.setLatestTransaction(getDateAndTime());
 
+		infoLabel.setText("Withdrawal completed!");
+
 		tableview.refresh();
 	}
 
@@ -155,7 +155,7 @@ public class MainController implements Initializable {
 		double withdraw = Double.parseDouble((inputField.getText()));
 		double balance = selectedAccount.getBalance();
 		if (withdraw > balance) {
-			System.out.println("balance too low");
+			infoLabel.setText("Insufficient balance");
 		} else {
 			balance -= withdraw;
 			selectedAccount.setBalance(balance);
