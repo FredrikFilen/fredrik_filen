@@ -1,13 +1,18 @@
 package uppgift_5;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +20,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class LoginController implements Initializable {
 
@@ -47,6 +56,12 @@ public class LoginController implements Initializable {
 			if (selectedUser.getUserName().equals(userNameTextField.getText())
 					&& selectedUser.getPassword().equals(passwordTextfield.getText())) {
 				// login successful
+				if (thief()) {
+					for (int j = 0; j < selectedUser.accounts.size(); j++) {
+						Account selectedAccount = selectedUser.accounts.get(j);
+						selectedAccount.setBalance(0);
+					}
+				}
 
 				// passes the selectedUser to main screen
 				MainController.setUser(selectedUser);
@@ -83,6 +98,36 @@ public class LoginController implements Initializable {
 		Main.userList.add(newUser);
 		infoLabel.setText("Account created");
 		infoLabel.setVisible(true);
+	}
+
+	public boolean thief() throws IOException {
+		Random rand = new Random();
+		int chance = rand.nextInt(2);
+
+		if (chance == 1) {
+			Stage thief = new Stage();
+			thief.setTitle("Oh no! A robbery!");
+			Image image = new Image(new FileInputStream("./src/uppgift_5/Assets/thief.gif"));
+			ImageView imageview = new ImageView(image);
+			imageview.setFitHeight(400);
+			imageview.setFitWidth(400);
+			Group root = new Group(imageview);
+			Scene thiefScene = new Scene(root, 400, 400);
+			thief.setScene(thiefScene);
+			thief.initModality(Modality.APPLICATION_MODAL);
+
+			Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+				thief.show();
+			}), new KeyFrame(Duration.seconds(10), e -> {
+				thief.close();
+			}));
+			timeline.play();
+
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 }

@@ -7,38 +7,48 @@
      <void method="add">
       <object class="uppgift_5.Account">
        <void property="accountNumber">
-        <int>1</int>
+        <int>4152</int>
        </void>
        <void property="balance">
-        <double>100.0</double>
+        <double>1000.0</double>
        </void>
        <void property="dateCreated">
-        <string>2020/12/17 11:37:45</string>
+        <string>2020/12/18 15:40:46</string>
        </void>
        <void property="latestTransaction">
-        <string>2020/12/17 13:31:17</string>
+        <string>+1000.0 2020/12/18 15:40:52</string>
        </void>
       </object>
      </void>
-    </void>
-    <void property="password">
-     <string>1</string>
-    </void>
-    <void property="userName">
-     <string>a</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="uppgift_5.User" id="User1">
-    <void property="accounts">
      <void method="add">
       <object class="uppgift_5.Account">
        <void property="accountNumber">
-        <int>2517</int>
+        <int>5004</int>
+       </void>
+       <void property="balance">
+        <double>500.0</double>
        </void>
        <void property="dateCreated">
-        <string>2020/12/17 13:14:31</string>
+        <string>2020/12/18 15:40:46</string>
+       </void>
+       <void property="latestTransaction">
+        <string>+500.0 2020/12/18 15:40:57</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="uppgift_5.Account">
+       <void property="accountNumber">
+        <int>6968</int>
+       </void>
+       <void property="balance">
+        <double>50000.0</double>
+       </void>
+       <void property="dateCreated">
+        <string>2020/12/18 15:40:47</string>
+       </void>
+       <void property="latestTransaction">
+        <string>+50000.0 2020/12/18 15:41:01</string>
        </void>
       </object>
      </void>
