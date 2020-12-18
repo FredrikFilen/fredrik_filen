@@ -7,48 +7,48 @@
      <void method="add">
       <object class="uppgift_5.Account">
        <void property="accountNumber">
-        <int>6422</int>
+        <int>4152</int>
        </void>
        <void property="balance">
-        <double>100.0</double>
+        <double>1000.0</double>
        </void>
        <void property="dateCreated">
-        <string>2020/12/18 14:54:46</string>
+        <string>2020/12/18 15:40:46</string>
        </void>
        <void property="latestTransaction">
-        <string>+100.0 2020/12/18 14:54:52</string>
+        <string>+1000.0 2020/12/18 15:40:52</string>
        </void>
       </object>
      </void>
      <void method="add">
       <object class="uppgift_5.Account">
        <void property="accountNumber">
-        <int>9703</int>
+        <int>5004</int>
        </void>
        <void property="balance">
         <double>500.0</double>
        </void>
        <void property="dateCreated">
-        <string>2020/12/18 14:54:46</string>
+        <string>2020/12/18 15:40:46</string>
        </void>
        <void property="latestTransaction">
-        <string>+500.0 2020/12/18 14:54:56</string>
+        <string>+500.0 2020/12/18 15:40:57</string>
        </void>
       </object>
      </void>
      <void method="add">
       <object class="uppgift_5.Account">
        <void property="accountNumber">
-        <int>5755</int>
+        <int>6968</int>
        </void>
        <void property="balance">
-        <double>49800.0</double>
+        <double>50000.0</double>
        </void>
        <void property="dateCreated">
-        <string>2020/12/18 14:54:47</string>
+        <string>2020/12/18 15:40:47</string>
        </void>
        <void property="latestTransaction">
-        <string>-200.0 2020/12/18 14:56:01</string>
+        <string>+50000.0 2020/12/18 15:41:01</string>
        </void>
       </object>
      </void>
@@ -58,16 +58,6 @@
     </void>
     <void property="userName">
      <string>admin</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="uppgift_5.User">
-    <void property="password">
-     <string>hej</string>
-    </void>
-    <void property="userName">
-     <string>fredrik</string>
     </void>
    </object>
   </void>
