@@ -61,5 +61,15 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="uppgift_5.User">
+    <void property="password">
+     <string>hej</string>
+    </void>
+    <void property="userName">
+     <string>fredrik</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>
