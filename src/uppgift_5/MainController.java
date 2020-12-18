@@ -20,6 +20,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -80,12 +83,12 @@ public class MainController implements Initializable {
 			tableview.getItems().add(selectedUser.accounts.get(i));
 		}
 
+		// listener for selection
 		tableview.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
 			if (newSelection != null) {
 				depositButton.setDisable(false);
 				withdrawalButton.setDisable(false);
 				inputField.setDisable(false);
-				infoLabel.setText("Enter amount");
 			}
 		});
 
@@ -143,9 +146,10 @@ public class MainController implements Initializable {
 
 		balance += deposit;
 		selectedAccount.setBalance(balance);
-		selectedAccount.setLatestTransaction(getDateAndTime());
+		selectedAccount.setLatestTransaction("+", deposit, getDateAndTime());
 
-		infoLabel.setText("Withdrawal completed!");
+		infoLabel.setText("Deposit completed");
+		infoLabel.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null)));
 
 		tableview.refresh();
 	}
@@ -156,11 +160,14 @@ public class MainController implements Initializable {
 		double balance = selectedAccount.getBalance();
 		if (withdraw > balance) {
 			infoLabel.setText("Insufficient balance");
+			infoLabel.setBackground(new Background(new BackgroundFill(Color.RED, null, null)));
 		} else {
 			balance -= withdraw;
 			selectedAccount.setBalance(balance);
+			infoLabel.setText("Withdrawal completed");
+			infoLabel.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null)));
+			selectedAccount.setLatestTransaction("-", withdraw, getDateAndTime());
 		}
-		selectedAccount.setLatestTransaction(getDateAndTime());
 
 		tableview.refresh();
 	}

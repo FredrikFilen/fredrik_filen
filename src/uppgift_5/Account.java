@@ -50,4 +50,9 @@ public class Account implements Serializable {
 		this.latestTransaction = date;
 	}
 
+	public void setLatestTransaction(String action, double amount, String date) {
+		String transaction = action + amount + " " + date;
+		this.latestTransaction = transaction;
+	}
+
 }
